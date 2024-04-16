@@ -1,9 +1,9 @@
 # Small project for quick 2d graphics
 
 
-Documentation: https://pliexe.github.io/Grafika2D/
+Documentation: https://pliexe.github.io/Grafika2D/html/
 
-Main Class for creating application: https://pliexe.github.io/Grafika2D/class_grafika_1_1_app.html
+Main Class for creating application: https://pliexe.github.io/Grafika2D/html/class_grafika_1_1_app.html
 
 ### The music file in assets I don't onw the rights to
 ### All rights goes to:
