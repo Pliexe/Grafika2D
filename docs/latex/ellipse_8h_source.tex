@@ -1,0 +1,31 @@
+\doxysection{ellipse.\+h}
+\hypertarget{ellipse_8h_source}{}\label{ellipse_8h_source}\index{Grafika2D/src/ellipse.h@{Grafika2D/src/ellipse.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <d2d1.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}point.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }Grafika}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grafika_1_1_ellipse}{Ellipse}}}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Ellipse}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY)\ :\ point(x,\ y),\ radiusX(radiusX),\ radiusY(radiusY)\ \{\}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Ellipse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ \&point,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY)\ :\ point(point),\ radiusX(radiusX),\ radiusY(radiusY)\ \{\}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Ellipse}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ radius)\ :\ point(x,\ y),\ radiusX(radius),\ radiusY(radius)\ \{\}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Ellipse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ \&point,\ \textcolor{keywordtype}{float}\ radius)\ :\ point(point),\ radiusX(radius),\ radiusY(radius)\ \{\}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Ellipse}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Ellipse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Ellipse}}\ \&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ point;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radiusX;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radiusY;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ D2D1\_ELLIPSE()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }D2D1\_ELLIPSE\ *\textcolor{keyword}{>}(\textcolor{keyword}{this});\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}

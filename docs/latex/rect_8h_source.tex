@@ -1,0 +1,50 @@
+\doxysection{rect.\+h}
+\hypertarget{rect_8h_source}{}\label{rect_8h_source}\index{Grafika2D/src/rect.h@{Grafika2D/src/rect.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <d2d1.h>}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }Grafika}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grafika_1_1_rect}{Rect}}}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ T\ left;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ T\ top;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ T\ right;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ T\ bottom;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rect}{Rect}}()\ :\ left(0),\ top(0),\ right(0),\ bottom(0)\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rect}{Rect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_rect}{Rect}}\ \&other)\ :\ left(other.left),\ top(other.top),\ right(other.right),\ bottom(other.bottom)\ \{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rect}{Rect}}(T\ left,\ T\ top,\ T\ right,\ T\ bottom)\ :\ left(left),\ top(top),\ right(right),\ bottom(bottom)\ \{\}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ D2D1\_RECT\_U()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }D2D1\_RECT\_U\ *\textcolor{keyword}{>}(\textcolor{keyword}{this});\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ D2D1\_RECT\_F()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }D2D1\_RECT\_F\ *\textcolor{keyword}{>}(\textcolor{keyword}{this});\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}}\ =\ \mbox{\hyperlink{struct_grafika_1_1_rect}{Rect<float>}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{struct_grafika_1_1_rect}{RectU}}\ =\ \mbox{\hyperlink{struct_grafika_1_1_rect}{Rect<uint32\_t>}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{RoundedRect}}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}}\ rect;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radiusX;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radiusY;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{RoundedRect}}()\ :\ rect(),\ radiusX(0),\ radiusY(0)\ \{\}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{RoundedRect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}}\ \&rect,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY)\ :\ rect(rect),\ radiusX(radiusX),\ radiusY(radiusY)\ \{\}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{RoundedRect}}(\textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY)\ :\ rect(left,\ top,\ right,\ bottom),\ radiusX(radiusX),\ radiusY(radiusY)\ \{\}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{RoundedRect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}}\ \&rect,\ \textcolor{keywordtype}{float}\ radius)\ :\ rect(rect),\ radiusX(radius),\ radiusY(radius)\ \{\}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{RoundedRect}}(\textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom,\ \textcolor{keywordtype}{float}\ radius)\ :\ rect(left,\ top,\ right,\ bottom),\ radiusX(radius),\ radiusY(radius)\ \{\}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{RoundedRect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{RoundedRect}}\ \&other)\ :\ rect(other.rect),\ radiusX(other.radiusX),\ radiusY(other.radiusY)\ \{\}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ D2D1\_ROUNDED\_RECT()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }D2D1\_ROUNDED\_RECT*\textcolor{keyword}{>}(\textcolor{keyword}{this});\ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}

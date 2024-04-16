@@ -1,0 +1,29 @@
+\doxysection{point.\+h}
+\hypertarget{point_8h_source}{}\label{point_8h_source}\index{Grafika2D/src/point.h@{Grafika2D/src/point.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <d2d1.h>}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }Grafika}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ :\ x(x),\ y(y)\ \{\}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}()\ :\ x(0),\ y(0)\ \{\}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ \&p)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}(x\ +\ p.x,\ y\ +\ p.y);\ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ \&p)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}(x\ -\/\ p.x,\ y\ -\/\ p.y);\ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ operator*(\textcolor{keywordtype}{float}\ s)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}(x\ *\ s,\ y\ *\ s);\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ operator/(\textcolor{keywordtype}{float}\ s)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}(x\ /\ s,\ y\ /\ s);\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ D2D1\_POINT\_2F()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ D2D1::Point2F(x,\ y);\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}

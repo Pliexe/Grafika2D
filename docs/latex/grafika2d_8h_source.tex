@@ -1,0 +1,196 @@
+\doxysection{grafika2d.\+h}
+\hypertarget{grafika2d_8h_source}{}\label{grafika2d_8h_source}\index{Grafika2D/src/grafika2d.h@{Grafika2D/src/grafika2d.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <Windows.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <D2D1.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <dwrite.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <wincodec.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <wrl.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ GRAFIKA2D}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GRAFIKA2D}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}ellipse.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}rect.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}timestep.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}color.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}graphics.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}brush.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}bitmap.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ https://docs.microsoft.com/en-\/us/windows/win32/medfound/saferelease}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ SafeRelease(T\ **ppT)}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (*ppT)}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ (*ppT)-\/>Release();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ *ppT\ =\ NULL;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }Grafika}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grafika_1_1_stroke_style}{StrokeStyle}}\ :\ \textcolor{keyword}{public}\ ID2D1StrokeStyle\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grafika_1_1_app}{App}}}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_grafika_1_1_app_a6a9d7958f483f437a6d9ecb5f1669df9}{Create}}(std::string\ title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ resizable\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ maximize\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Destroy();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ InitGraphics();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a89a1be269ea011890aaceae1f54c3a74}{Show}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_aaa65463bc823d55eb63ad7698d622d95}{Hide}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Close();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_grafika_1_1_app_ab61904818675d7d25ec5798799028269}{pool}}()}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ Time::internal\_frame\_update();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ MSG\ message;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ message.message\ =\ WM\_NULL;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PeekMessage(\&message,\ NULL,\ 0,\ 0,\ PM\_REMOVE))}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TranslateMessage(\&message);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DispatchMessage(\&message);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (message.message\ ==\ WM\_QUIT)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_adf2dce419eaedc87f24210f91acfc497}{Loop}}(\textcolor{keywordtype}{void}\ (*loop)())}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!loop)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MessageBox(NULL,\ L\textcolor{stringliteral}{"{}Loop\ function\ not\ defined"{}},\ L\textcolor{stringliteral}{"{}Error"{}},\ MB\_OK\ |\ MB\_ICONERROR);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ Time::internal\_init();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ MSG\ message;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ message.message\ =\ WM\_NULL;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (message.message\ !=\ WM\_QUIT)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PeekMessage(\&message,\ NULL,\ 0,\ 0,\ PM\_REMOVE))}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TranslateMessage(\&message);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DispatchMessage(\&message);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loop();}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\ \mbox{\hyperlink{class_grafika_1_1_app_a8fc7182399ed1ad5475ab26f9e1efdfb}{GetMousePos}}()}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ POINT\ p;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ GetCursorPos(\&p);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ ScreenToClient(hWnd,\ \&p);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}}\{(float)p.x,\ (\textcolor{keywordtype}{float})p.y\};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ Microsoft::WRL::ComPtr<ID2D1HwndRenderTarget>\ GetRenderTarget()\ \{\ \textcolor{keywordflow}{return}\ m\_RenderTarget;\ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_aa92ba09146d351c8c60cbbc9d0791f1e}{BeginDraw}}();}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a5c56f845e855ee98b8e061d826ff9c6f}{EndDraw}}();}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a4c749d9d6f2f8bf36d3f8c96cc93645d}{ClearScreen}}(\mbox{\hyperlink{class_color}{Color}}\ color\ =\ Color::Black);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ Brush\ *\mbox{\hyperlink{class_grafika_1_1_app_a95cd3176c312cb200bcba6a967cb55b3}{CreateSolidBrush}}(\mbox{\hyperlink{class_color}{Color}}\ color);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ Brush\ *\mbox{\hyperlink{class_grafika_1_1_app_a95cd3176c312cb200bcba6a967cb55b3}{CreateSolidBrush}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a0a833e1fd70027cfdbeddc58733de4c3}{DrawBitmap}}(\mbox{\hyperlink{class_bitmap}{Bitmap}}\ *bitmap,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}}\ \&rect,\ \textcolor{keywordtype}{float}\ opacity\ =\ 1.0f,\ D2D1\_BITMAP\_INTERPOLATION\_MODE\ interpolationMode\ =\ D2D1\_BITMAP\_INTERPOLATION\_MODE::D2D1\_BITMAP\_INTERPOLATION\_MODE\_NEAREST\_NEIGHBOR)}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ m\_RenderTarget-\/>DrawBitmap(}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitmap,\ (D2D1\_RECT\_F)rect,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ opacity,\ interpolationMode,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D2D1::RectF(0.0f,\ 0.0f,\ bitmap-\/>GetSize().width,\ bitmap-\/>GetSize().height));}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ DrawRectangle(\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}}\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{StrokeStyle}}\ *strokeStyle\ =\ NULL)\ \{\ DrawRectangle(brush,\ \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}}(left,\ top,\ right,\ bottom),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawRectangle(Brush\ *brush,\ \textcolor{keyword}{const}\ RectF\ \&rect,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ DrawRoundedRectangle(Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom,\ \textcolor{keywordtype}{float}\ radius,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL)\ \{\ DrawRoundedRectangle(brush,\ RoundedRect(left,\ top,\ right,\ bottom,\ radius),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ DrawRoundedRectangle(Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL)\ \{\ DrawRoundedRectangle(brush,\ RoundedRect(left,\ top,\ right,\ bottom,\ radiusX,\ radiusY),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ DrawRoundedRectangle(Brush\ *brush,\ \textcolor{keyword}{const}\ RectF\ \&rect,\ \textcolor{keywordtype}{float}\ radius,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL)\ \{\ DrawRoundedRectangle(brush,\ RoundedRect(rect,\ radius),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ DrawRoundedRectangle(Brush\ *brush,\ \textcolor{keyword}{const}\ RectF\ \&rect,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL)\ \{\ DrawRoundedRectangle(brush,\ RoundedRect(rect,\ radiusX,\ radiusY),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawRoundedRectangle(Brush\ *brush,\ \textcolor{keyword}{const}\ RoundedRect\ \&roundedRect,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(Brush\ *brush,\ \textcolor{keyword}{const}\ RectF\ \&rect,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL);}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL)\ \{\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(brush,\ RectF(left,\ top,\ right,\ bottom),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(Brush\ *brush,\ \textcolor{keywordtype}{float}\ centerX,\ \textcolor{keywordtype}{float}\ centerY,\ \textcolor{keywordtype}{float}\ radius,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL)\ \{\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(brush,\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika::Ellipse}}(centerX,\ centerY,\ radius,\ radius),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(Brush\ *brush,\ \textcolor{keyword}{const}\ PointF\ \&center,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL)\ \{\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(brush,\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika::Ellipse}}(center,\ radiusX,\ radiusY),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(Brush\ *brush,\ \textcolor{keyword}{const}\ PointF\ \&center,\ \textcolor{keywordtype}{float}\ radius,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL)\ \{\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(brush,\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika::Ellipse}}(center,\ radius),\ strokeWidth,\ strokeStyle);\ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{DrawEllipse}}(Brush\ *brush,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika::Ellipse}}\ \&ellipse,\ \textcolor{keywordtype}{float}\ strokeWidth\ =\ 1.0f,\ StrokeStyle\ *strokeStyle\ =\ NULL);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FillRoundedRectangle(Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom,\ \textcolor{keywordtype}{float}\ radius)\ \{\ FillRoundedRectangle(brush,\ RoundedRect(left,\ top,\ right,\ bottom,\ radius));\ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FillRoundedRectangle(Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY)\ \{\ FillRoundedRectangle(brush,\ RoundedRect(left,\ top,\ right,\ bottom,\ radiusX,\ radiusY));\ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FillRoundedRectangle(Brush\ *brush,\ \textcolor{keyword}{const}\ RectF\ \&rect,\ \textcolor{keywordtype}{float}\ radius)\ \{\ FillRoundedRectangle(brush,\ RoundedRect(rect,\ radius));\ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FillRoundedRectangle(Brush\ *brush,\ \textcolor{keyword}{const}\ RectF\ \&rect,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY)\ \{\ FillRoundedRectangle(brush,\ RoundedRect(rect,\ radiusX,\ radiusY));\ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FillRoundedRectangle(Brush\ *brush,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{Grafika::RoundedRect}}\ \&roundedRect);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FillRectangle(Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FillRectangle(Brush\ *brush,\ \textcolor{keyword}{const}\ RectF\ \&rect);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FillEllipse(Brush\ *brush,\ \textcolor{keyword}{const}\ RectF\ \&rect);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FillEllipse(Brush\ *brush,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika::Ellipse}}\ \&ellipse);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FillEllipse(Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom)\ \{\ FillEllipse(brush,\ RectF(left,\ top,\ right,\ bottom));\ \}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FillEllipse(Brush\ *brush,\ \textcolor{keywordtype}{float}\ centerX,\ \textcolor{keywordtype}{float}\ centerY,\ \textcolor{keywordtype}{float}\ radius)\ \{\ FillEllipse(brush,\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika::Ellipse}}(centerX,\ centerY,\ radius,\ radius));\ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FillEllipse(Brush\ *brush,\ \textcolor{keyword}{const}\ PointF\ \&center,\ \textcolor{keywordtype}{float}\ radiusX,\ \textcolor{keywordtype}{float}\ radiusY)\ \{\ FillEllipse(brush,\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika::Ellipse}}(center,\ radiusX,\ radiusY));\ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FillEllipse(Brush\ *brush,\ \textcolor{keyword}{const}\ PointF\ \&center,\ \textcolor{keywordtype}{float}\ radius)\ \{\ FillEllipse(brush,\ \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika::Ellipse}}(center,\ radius));\ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawText(std::string\ text,\ IDWriteTextFormat\ *textFormat,\ ID2D1Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom)\ \{\ DrawText(text,\ textFormat,\ brush,\ D2D1::RectF(left,\ top,\ right,\ bottom));\ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawText(std::string\ text,\ IDWriteTextFormat\ *textFormat,\ ID2D1Brush\ *brush,\ D2D1\_RECT\_F\ rect);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawTextW(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *text,\ IDWriteTextFormat\ *textFormat,\ ID2D1Brush\ *brush,\ \textcolor{keywordtype}{float}\ left,\ \textcolor{keywordtype}{float}\ top,\ \textcolor{keywordtype}{float}\ right,\ \textcolor{keywordtype}{float}\ bottom)\ \{\ DrawText(text,\ textFormat,\ brush,\ D2D1::RectF(left,\ top,\ right,\ bottom));\ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawTextW(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *text,\ IDWriteTextFormat\ *textFormat,\ ID2D1Brush\ *brush,\ D2D1\_RECT\_F\ rect);}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}}\ *\mbox{\hyperlink{class_grafika_1_1_app_ad49fa4b081bc259a66e321ba2b071aab}{GetColorBrush}}(Color::Enum\ color)}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Color::Enum,\ Brush\ *>\ brushes;}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ brushes.find(color);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ brushes.end())}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ brushes.insert(std::make\_pair(color,\ \mbox{\hyperlink{class_grafika_1_1_app_a95cd3176c312cb200bcba6a967cb55b3}{CreateSolidBrush}}(color))).first;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_grafika_1_1_app_a0e5735d8f888fd77c75b44d1d2fdc516}{CreateBitmapImage}}(std::filesystem::path\ path,\ \mbox{\hyperlink{class_bitmap}{Bitmap}}\ **bmp);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ HRESULT\ \mbox{\hyperlink{class_grafika_1_1_app_a20efe3e107971190c136de628e4f6c77}{CreateTextFormat}}(IDWriteTextFormat\ **ref,\ \textcolor{keyword}{const}\ WCHAR\ *fontFamilyName,\ IDWriteFontCollection\ *fontCollection,\ FLOAT\ fontSize,\ DWRITE\_FONT\_WEIGHT\ fontWeight\ =\ DWRITE\_FONT\_WEIGHT\_NORMAL,}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DWRITE\_FONT\_STYLE\ fontStyle\ =\ DWRITE\_FONT\_STYLE\_NORMAL,}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DWRITE\_FONT\_STRETCH\ fontStretch\ =\ DWRITE\_FONT\_STRETCH\_NORMAL,}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ WCHAR\ *localeName\ =\ L\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_DWriteFactory-\/>CreateTextFormat(}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fontFamilyName,\ fontCollection,\ fontWeight,\ fontStyle,\ fontStretch,}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fontSize,\ localeName,\ ref);}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ HWND\ hWnd\ =\ NULL;}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ Microsoft::WRL::ComPtr<ID2D1HwndRenderTarget>\ m\_RenderTarget;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ Microsoft::WRL::ComPtr<ID2D1Factory>\ m\_Factory;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ Microsoft::WRL::ComPtr<IDWriteFactory>\ m\_DWriteFactory;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ LRESULT\ CALLBACK\ StaticWindowProc(HWND\ hWnd,\ UINT\ uMsg,\ WPARAM\ wParam,\ LPARAM\ lParam);}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ LRESULT\ WindowProc(UINT\ uMsg,\ WPARAM\ wParam,\ LPARAM\ lParam);}
+\DoxyCodeLine{00309\ \ \ \ \ \};}
+\DoxyCodeLine{00310\ \}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

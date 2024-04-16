@@ -1,0 +1,33 @@
+\doxysection{timestep.\+h}
+\hypertarget{timestep_8h_source}{}\label{timestep_8h_source}\index{Grafika2D/src/timestep.h@{Grafika2D/src/timestep.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Copyright\ (c)\ 2022\ Szabadi\ L{\ucr}szl{\ucr}\ Zsolt}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ AGPL\ v3.0\ license\ with}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ this\ file.\ If\ not,\ please\ write\ to:\ pliexe,\ or\ visit\ :\ https://github.com/Pliexe/HeliosEngine/blob/master/LICENSE.txt}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }Grafika}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grafika_1_1_time}{Time}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ DeltaTime();}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ FPS()\ \{\ \textcolor{keywordflow}{return}\ FramesPerSecond();\ \}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ FramesPerSecond();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::chrono::high\_resolution\_clock::time\_point\ LastFrame();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ PassedTime();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ CurrentTimeMicroseconds();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ internal\_init();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ internal\_frame\_update();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grafika_1_1_app}{App}};}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}

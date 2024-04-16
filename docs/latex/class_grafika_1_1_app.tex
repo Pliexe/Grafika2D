@@ -1,0 +1,498 @@
+\doxysection{Grafika\+::App Class Reference}
+\hypertarget{class_grafika_1_1_app}{}\label{class_grafika_1_1_app}\index{Grafika::App@{Grafika::App}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_grafika_1_1_app_a6a9d7958f483f437a6d9ecb5f1669df9}{Create}} (std\+::string title, int width, int height, bool resizable=false, bool maximize=false)
+\item 
+\Hypertarget{class_grafika_1_1_app_aa8d291cbba3b72fe6d8bc397538dffde}\label{class_grafika_1_1_app_aa8d291cbba3b72fe6d8bc397538dffde} 
+bool {\bfseries Destroy} ()
+\item 
+\Hypertarget{class_grafika_1_1_app_aad56752c85606bb33758b90b72e89a10}\label{class_grafika_1_1_app_aad56752c85606bb33758b90b72e89a10} 
+bool {\bfseries Init\+Graphics} ()
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_a89a1be269ea011890aaceae1f54c3a74}{Show}} ()
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_aaa65463bc823d55eb63ad7698d622d95}{Hide}} ()
+\item 
+\Hypertarget{class_grafika_1_1_app_ab9aeb0255ccfb43b330432deb1d92f4c}\label{class_grafika_1_1_app_ab9aeb0255ccfb43b330432deb1d92f4c} 
+void {\bfseries Close} ()
+\item 
+bool \mbox{\hyperlink{class_grafika_1_1_app_ab61904818675d7d25ec5798799028269}{pool}} ()
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_adf2dce419eaedc87f24210f91acfc497}{Loop}} (void(\texorpdfstring{$\ast$}{*}loop)())
+\item 
+const \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}} \mbox{\hyperlink{class_grafika_1_1_app_a8fc7182399ed1ad5475ab26f9e1efdfb}{Get\+Mouse\+Pos}} ()
+\item 
+\Hypertarget{class_grafika_1_1_app_a48c714662df466f371e46fe5db36f096}\label{class_grafika_1_1_app_a48c714662df466f371e46fe5db36f096} 
+Microsoft\+::\+WRL\+::\+Com\+Ptr$<$ ID2\+D1\+Hwnd\+Render\+Target $>$ {\bfseries Get\+Render\+Target} ()
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_aa92ba09146d351c8c60cbbc9d0791f1e}{Begin\+Draw}} ()
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_a5c56f845e855ee98b8e061d826ff9c6f}{End\+Draw}} ()
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_a4c749d9d6f2f8bf36d3f8c96cc93645d}{Clear\+Screen}} (\mbox{\hyperlink{class_color}{Color}} color=Color\+::\+Black)
+\item 
+\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_grafika_1_1_app_a95cd3176c312cb200bcba6a967cb55b3}{Create\+Solid\+Brush}} (\mbox{\hyperlink{class_color}{Color}} color)
+\item 
+\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_grafika_1_1_app_a2da650a2bc4e0c0910debceec98b2ae8}{Create\+Solid\+Brush}} (float r, float g, float b, float a)
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_a0a833e1fd70027cfdbeddc58733de4c3}{Draw\+Bitmap}} (\mbox{\hyperlink{class_bitmap}{Bitmap}} \texorpdfstring{$\ast$}{*}bitmap, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect, float opacity=1.\+0f, D2\+D1\+\_\+\+BITMAP\+\_\+\+INTERPOLATION\+\_\+\+MODE interpolation\+Mode=D2\+D1\+\_\+\+BITMAP\+\_\+\+INTERPOLATION\+\_\+\+MODE\+::\+D2\+D1\+\_\+\+BITMAP\+\_\+\+INTERPOLATION\+\_\+\+MODE\+\_\+\+NEAREST\+\_\+\+NEIGHBOR)
+\item 
+\Hypertarget{class_grafika_1_1_app_a3099be53ffd6f734aecfba2b6c38eee9}\label{class_grafika_1_1_app_a3099be53ffd6f734aecfba2b6c38eee9} 
+void {\bfseries Draw\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_a7bf228ee2d87332dfca74019098e2cd8}{Draw\+Rectangle}} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_a1a1743a053658070628f945ee718bf4e}\label{class_grafika_1_1_app_a1a1743a053658070628f945ee718bf4e} 
+void {\bfseries Draw\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom, float radius, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_ae46c543d54e675d0fa5104a248cb07e1}\label{class_grafika_1_1_app_ae46c543d54e675d0fa5104a248cb07e1} 
+void {\bfseries Draw\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom, float radiusX, float radiusY, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_a3189992cb8269a95bc2ef558ab9a6842}\label{class_grafika_1_1_app_a3189992cb8269a95bc2ef558ab9a6842} 
+void {\bfseries Draw\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect, float radius, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_aa24665fb71e502008968d66b98631d2c}\label{class_grafika_1_1_app_aa24665fb71e502008968d66b98631d2c} 
+void {\bfseries Draw\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect, float radiusX, float radiusY, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_ad653895a3a2df192646d4f4e2b0c8ca3}\label{class_grafika_1_1_app_ad653895a3a2df192646d4f4e2b0c8ca3} 
+void {\bfseries Draw\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{Rounded\+Rect}} \&rounded\+Rect, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}{Draw\+Ellipse}} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_ac0abf0ad5b0f322a795043288c93f3e8}\label{class_grafika_1_1_app_ac0abf0ad5b0f322a795043288c93f3e8} 
+void {\bfseries Draw\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_abb4ff6c390ec084ad79d2d048052b3d8}\label{class_grafika_1_1_app_abb4ff6c390ec084ad79d2d048052b3d8} 
+void {\bfseries Draw\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float centerX, float centerY, float radius, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_a3f2ffd6ac3b2b9b815442dff63017b2a}\label{class_grafika_1_1_app_a3f2ffd6ac3b2b9b815442dff63017b2a} 
+void {\bfseries Draw\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}} \&center, float radiusX, float radiusY, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_ad0b1f211c23d2560f832bd27040ef815}\label{class_grafika_1_1_app_ad0b1f211c23d2560f832bd27040ef815} 
+void {\bfseries Draw\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}} \&center, float radius, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_abdf2e046a66ba944dca12a27fad2db87}{Draw\+Ellipse}} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika\+::\+Ellipse}} \&ellipse, float stroke\+Width=1.\+0f, \mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}stroke\+Style=NULL)
+\item 
+\Hypertarget{class_grafika_1_1_app_ac59bd998dd0ee033a2badb1e3d628bd4}\label{class_grafika_1_1_app_ac59bd998dd0ee033a2badb1e3d628bd4} 
+void {\bfseries Fill\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom, float radius)
+\item 
+\Hypertarget{class_grafika_1_1_app_a9f3d903070aa1527cb6fa95b8e4ff6d5}\label{class_grafika_1_1_app_a9f3d903070aa1527cb6fa95b8e4ff6d5} 
+void {\bfseries Fill\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom, float radiusX, float radiusY)
+\item 
+\Hypertarget{class_grafika_1_1_app_ab2b5aa1f1eefb68c671719cbc377249f}\label{class_grafika_1_1_app_ab2b5aa1f1eefb68c671719cbc377249f} 
+void {\bfseries Fill\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect, float radius)
+\item 
+\Hypertarget{class_grafika_1_1_app_aef490ae44e5e38815e187b80e73c9cd2}\label{class_grafika_1_1_app_aef490ae44e5e38815e187b80e73c9cd2} 
+void {\bfseries Fill\+Rounded\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect, float radiusX, float radiusY)
+\item 
+void \mbox{\hyperlink{class_grafika_1_1_app_a6457ec0de4421f77acf58603cf63ed89}{Fill\+Rounded\+Rectangle}} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{Grafika\+::\+Rounded\+Rect}} \&rounded\+Rect)
+\item 
+\Hypertarget{class_grafika_1_1_app_a0b42045fe161e452a4245356f320aa22}\label{class_grafika_1_1_app_a0b42045fe161e452a4245356f320aa22} 
+void {\bfseries Fill\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom)
+\item 
+\Hypertarget{class_grafika_1_1_app_a932b2c5f96261c4570d308469d8d2fd0}\label{class_grafika_1_1_app_a932b2c5f96261c4570d308469d8d2fd0} 
+void {\bfseries Fill\+Rectangle} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect)
+\item 
+\Hypertarget{class_grafika_1_1_app_a94b3c796aba6176643f8439cfb8f1247}\label{class_grafika_1_1_app_a94b3c796aba6176643f8439cfb8f1247} 
+void {\bfseries Fill\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&rect)
+\item 
+\Hypertarget{class_grafika_1_1_app_abd0b0ae68c572b3fa0a9de707f3f36e6}\label{class_grafika_1_1_app_abd0b0ae68c572b3fa0a9de707f3f36e6} 
+void {\bfseries Fill\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika\+::\+Ellipse}} \&ellipse)
+\item 
+\Hypertarget{class_grafika_1_1_app_a3e91402ec7413cad84e5eaca99632cfa}\label{class_grafika_1_1_app_a3e91402ec7413cad84e5eaca99632cfa} 
+void {\bfseries Fill\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom)
+\item 
+\Hypertarget{class_grafika_1_1_app_a64846c4b4b4e418723cd2584e12e2d52}\label{class_grafika_1_1_app_a64846c4b4b4e418723cd2584e12e2d52} 
+void {\bfseries Fill\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, float centerX, float centerY, float radius)
+\item 
+\Hypertarget{class_grafika_1_1_app_a1821f0c5587bc4cf9e6aa5bac8027988}\label{class_grafika_1_1_app_a1821f0c5587bc4cf9e6aa5bac8027988} 
+void {\bfseries Fill\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}} \&center, float radiusX, float radiusY)
+\item 
+\Hypertarget{class_grafika_1_1_app_ad512b27da8164981613722b1198d20b4}\label{class_grafika_1_1_app_ad512b27da8164981613722b1198d20b4} 
+void {\bfseries Fill\+Ellipse} (\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}brush, const \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}} \&center, float radius)
+\item 
+\Hypertarget{class_grafika_1_1_app_a67f66894d14c4db3f000e3d380ffde13}\label{class_grafika_1_1_app_a67f66894d14c4db3f000e3d380ffde13} 
+void {\bfseries Draw\+Text} (std\+::string text, IDWrite\+Text\+Format \texorpdfstring{$\ast$}{*}text\+Format, ID2\+D1\+Brush \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom)
+\item 
+\Hypertarget{class_grafika_1_1_app_a1c105e9c137217d7763f352112f83b62}\label{class_grafika_1_1_app_a1c105e9c137217d7763f352112f83b62} 
+void {\bfseries Draw\+Text} (std\+::string text, IDWrite\+Text\+Format \texorpdfstring{$\ast$}{*}text\+Format, ID2\+D1\+Brush \texorpdfstring{$\ast$}{*}brush, D2\+D1\+\_\+\+RECT\+\_\+F rect)
+\item 
+\Hypertarget{class_grafika_1_1_app_a9aa533acfc3d105b6becc609bb8385bc}\label{class_grafika_1_1_app_a9aa533acfc3d105b6becc609bb8385bc} 
+void {\bfseries Draw\+TextW} (const wchar\+\_\+t \texorpdfstring{$\ast$}{*}text, IDWrite\+Text\+Format \texorpdfstring{$\ast$}{*}text\+Format, ID2\+D1\+Brush \texorpdfstring{$\ast$}{*}brush, float left, float top, float right, float bottom)
+\item 
+\Hypertarget{class_grafika_1_1_app_a830ea85374728a61b43415db073d81be}\label{class_grafika_1_1_app_a830ea85374728a61b43415db073d81be} 
+void {\bfseries Draw\+TextW} (const wchar\+\_\+t \texorpdfstring{$\ast$}{*}text, IDWrite\+Text\+Format \texorpdfstring{$\ast$}{*}text\+Format, ID2\+D1\+Brush \texorpdfstring{$\ast$}{*}brush, D2\+D1\+\_\+\+RECT\+\_\+F rect)
+\item 
+\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_grafika_1_1_app_ad49fa4b081bc259a66e321ba2b071aab}{Get\+Color\+Brush}} (Color\+::\+Enum color)
+\item 
+bool \mbox{\hyperlink{class_grafika_1_1_app_a0e5735d8f888fd77c75b44d1d2fdc516}{Create\+Bitmap\+Image}} (std\+::filesystem\+::path path, \mbox{\hyperlink{class_bitmap}{Bitmap}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}bmp)
+\item 
+HRESULT \mbox{\hyperlink{class_grafika_1_1_app_a20efe3e107971190c136de628e4f6c77}{Create\+Text\+Format}} (IDWrite\+Text\+Format \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}ref, const WCHAR \texorpdfstring{$\ast$}{*}font\+Family\+Name, IDWrite\+Font\+Collection \texorpdfstring{$\ast$}{*}font\+Collection, FLOAT font\+Size, DWRITE\+\_\+\+FONT\+\_\+\+WEIGHT font\+Weight=DWRITE\+\_\+\+FONT\+\_\+\+WEIGHT\+\_\+\+NORMAL, DWRITE\+\_\+\+FONT\+\_\+\+STYLE font\+Style=DWRITE\+\_\+\+FONT\+\_\+\+STYLE\+\_\+\+NORMAL, DWRITE\+\_\+\+FONT\+\_\+\+STRETCH font\+Stretch=DWRITE\+\_\+\+FONT\+\_\+\+STRETCH\+\_\+\+NORMAL, const WCHAR \texorpdfstring{$\ast$}{*}locale\+Name=L"{}"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_grafika_1_1_app_aa92ba09146d351c8c60cbbc9d0791f1e}\label{class_grafika_1_1_app_aa92ba09146d351c8c60cbbc9d0791f1e} 
+\index{Grafika::App@{Grafika::App}!BeginDraw@{BeginDraw}}
+\index{BeginDraw@{BeginDraw}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{BeginDraw()}{BeginDraw()}}
+{\footnotesize\ttfamily void App\+::\+Begin\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Begins drawing on the render target. \Hypertarget{class_grafika_1_1_app_a4c749d9d6f2f8bf36d3f8c96cc93645d}\label{class_grafika_1_1_app_a4c749d9d6f2f8bf36d3f8c96cc93645d} 
+\index{Grafika::App@{Grafika::App}!ClearScreen@{ClearScreen}}
+\index{ClearScreen@{ClearScreen}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{ClearScreen()}{ClearScreen()}}
+{\footnotesize\ttfamily void App\+::\+Clear\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_color}{Color}}}]{color = {\ttfamily Color\+:\+:Black} }\end{DoxyParamCaption})}
+
+Clears the screen with the specified color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to clear the screen with.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_a6a9d7958f483f437a6d9ecb5f1669df9}\label{class_grafika_1_1_app_a6a9d7958f483f437a6d9ecb5f1669df9} 
+\index{Grafika::App@{Grafika::App}!Create@{Create}}
+\index{Create@{Create}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily bool App\+::\+Create (\begin{DoxyParamCaption}\item[{std\+::string}]{title,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{bool}]{resizable = {\ttfamily false},  }\item[{bool}]{maximize = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Creates a new window for the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the window. \\
+\hline
+{\em width} & The width of the window. \\
+\hline
+{\em height} & The height of the window. \\
+\hline
+{\em resizable} & Whether the window can be resized. \\
+\hline
+{\em maximize} & Whether the window should be maximized.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the window was successfully created, false otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_a0e5735d8f888fd77c75b44d1d2fdc516}\label{class_grafika_1_1_app_a0e5735d8f888fd77c75b44d1d2fdc516} 
+\index{Grafika::App@{Grafika::App}!CreateBitmapImage@{CreateBitmapImage}}
+\index{CreateBitmapImage@{CreateBitmapImage}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{CreateBitmapImage()}{CreateBitmapImage()}}
+{\footnotesize\ttfamily bool App\+::\+Create\+Bitmap\+Image (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{path,  }\item[{\mbox{\hyperlink{class_bitmap}{Bitmap}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{bmp }\end{DoxyParamCaption})}
+
+Creates a Bitmap\+Image from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to the file \\
+\hline
+{\em bmp} & a pointer to a pointer to a Bitmap\+Image\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_a95cd3176c312cb200bcba6a967cb55b3}\label{class_grafika_1_1_app_a95cd3176c312cb200bcba6a967cb55b3} 
+\index{Grafika::App@{Grafika::App}!CreateSolidBrush@{CreateSolidBrush}}
+\index{CreateSolidBrush@{CreateSolidBrush}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{CreateSolidBrush()}{CreateSolidBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*} App\+::\+Create\+Solid\+Brush (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_color}{Color}}}]{color }\end{DoxyParamCaption})}
+
+Creates a solid color brush with the specified color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the brush.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created brush, or nullptr if the brush creation fails. 
+\end{DoxyReturn}
+\Hypertarget{class_grafika_1_1_app_a2da650a2bc4e0c0910debceec98b2ae8}\label{class_grafika_1_1_app_a2da650a2bc4e0c0910debceec98b2ae8} 
+\index{Grafika::App@{Grafika::App}!CreateSolidBrush@{CreateSolidBrush}}
+\index{CreateSolidBrush@{CreateSolidBrush}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{CreateSolidBrush()}{CreateSolidBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*} App\+::\+Create\+Solid\+Brush (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})}
+
+Creates a solid brush with the specified RGBA color values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red component of the color (0.\+0f -\/ 1.\+0f). \\
+\hline
+{\em g} & The green component of the color (0.\+0f -\/ 1.\+0f). \\
+\hline
+{\em b} & The blue component of the color (0.\+0f -\/ 1.\+0f). \\
+\hline
+{\em a} & The alpha component of the color (0.\+0f -\/ 1.\+0f).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created solid brush.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_a20efe3e107971190c136de628e4f6c77}\label{class_grafika_1_1_app_a20efe3e107971190c136de628e4f6c77} 
+\index{Grafika::App@{Grafika::App}!CreateTextFormat@{CreateTextFormat}}
+\index{CreateTextFormat@{CreateTextFormat}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{CreateTextFormat()}{CreateTextFormat()}}
+{\footnotesize\ttfamily HRESULT Grafika\+::\+App\+::\+Create\+Text\+Format (\begin{DoxyParamCaption}\item[{IDWrite\+Text\+Format \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{ref,  }\item[{const WCHAR \texorpdfstring{$\ast$}{*}}]{font\+Family\+Name,  }\item[{IDWrite\+Font\+Collection \texorpdfstring{$\ast$}{*}}]{font\+Collection,  }\item[{FLOAT}]{font\+Size,  }\item[{DWRITE\+\_\+\+FONT\+\_\+\+WEIGHT}]{font\+Weight = {\ttfamily DWRITE\+\_\+FONT\+\_\+WEIGHT\+\_\+NORMAL},  }\item[{DWRITE\+\_\+\+FONT\+\_\+\+STYLE}]{font\+Style = {\ttfamily DWRITE\+\_\+FONT\+\_\+STYLE\+\_\+NORMAL},  }\item[{DWRITE\+\_\+\+FONT\+\_\+\+STRETCH}]{font\+Stretch = {\ttfamily DWRITE\+\_\+FONT\+\_\+STRETCH\+\_\+NORMAL},  }\item[{const WCHAR \texorpdfstring{$\ast$}{*}}]{locale\+Name = {\ttfamily L"{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a text format object using the Direct\+Write library.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ref} & a pointer to a pointer to an IDWrite\+Text\+Format interface \\
+\hline
+{\em font\+Family\+Name} & the name of the font family to use \\
+\hline
+{\em font\+Collection} & the font collection to use \\
+\hline
+{\em font\+Size} & the size of the font \\
+\hline
+{\em font\+Weight} & the weight of the font (default\+: DWRITE\+\_\+\+FONT\+\_\+\+WEIGHT\+\_\+\+NORMAL) \\
+\hline
+{\em font\+Style} & the style of the font (default\+: DWRITE\+\_\+\+FONT\+\_\+\+STYLE\+\_\+\+NORMAL) \\
+\hline
+{\em font\+Stretch} & the stretch of the font (default\+: DWRITE\+\_\+\+FONT\+\_\+\+STRETCH\+\_\+\+NORMAL) \\
+\hline
+{\em locale\+Name} & the locale name to use (default\+: "{}"{})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an HRESULT indicating success or failure
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_a0a833e1fd70027cfdbeddc58733de4c3}\label{class_grafika_1_1_app_a0a833e1fd70027cfdbeddc58733de4c3} 
+\index{Grafika::App@{Grafika::App}!DrawBitmap@{DrawBitmap}}
+\index{DrawBitmap@{DrawBitmap}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{DrawBitmap()}{DrawBitmap()}}
+{\footnotesize\ttfamily void Grafika\+::\+App\+::\+Draw\+Bitmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bitmap}{Bitmap}} \texorpdfstring{$\ast$}{*}}]{bitmap,  }\item[{const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&}]{rect,  }\item[{float}]{opacity = {\ttfamily 1.0f},  }\item[{D2\+D1\+\_\+\+BITMAP\+\_\+\+INTERPOLATION\+\_\+\+MODE}]{interpolation\+Mode = {\ttfamily D2D1\+\_\+BITMAP\+\_\+INTERPOLATION\+\_\+MODE\+:\+:D2D1\+\_\+BITMAP\+\_\+INTERPOLATION\+\_\+MODE\+\_\+NEAREST\+\_\+NEIGHBOR} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Draws a bitmap on the render target with optional opacity and interpolation mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & The bitmap to draw. \\
+\hline
+{\em rect} & The destination rectangle of the bitmap. \\
+\hline
+{\em opacity} & The opacity of the bitmap (default is 1.\+0). \\
+\hline
+{\em interpolation\+Mode} & The interpolation mode for scaling the bitmap.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_abdf2e046a66ba944dca12a27fad2db87}\label{class_grafika_1_1_app_abdf2e046a66ba944dca12a27fad2db87} 
+\index{Grafika::App@{Grafika::App}!DrawEllipse@{DrawEllipse}}
+\index{DrawEllipse@{DrawEllipse}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{DrawEllipse()}{DrawEllipse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Grafika\+::\+App\+::\+Draw\+Ellipse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}}]{brush,  }\item[{const \mbox{\hyperlink{struct_grafika_1_1_ellipse}{Grafika\+::\+Ellipse}} \&}]{ellipse,  }\item[{float}]{stroke\+Width = {\ttfamily 1.0f},  }\item[{\mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}}]{stroke\+Style = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Draws an ellipse with the specified brush, dimensions, stroke width, and stroke style.
+
+
+\begin{DoxyParams}{Parameters}
+{\em brush} & The brush used to fill the ellipse. \\
+\hline
+{\em ellipse} & The ellipse to be drawn. \\
+\hline
+{\em stroke\+Width} & The width of the ellipse\textquotesingle{}s stroke. \\
+\hline
+{\em stroke\+Style} & The style of the stroke. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24}\label{class_grafika_1_1_app_a623011847db2b5e7db1648d4d2ed3e24} 
+\index{Grafika::App@{Grafika::App}!DrawEllipse@{DrawEllipse}}
+\index{DrawEllipse@{DrawEllipse}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{DrawEllipse()}{DrawEllipse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Grafika\+::\+App\+::\+Draw\+Ellipse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}}]{brush,  }\item[{const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&}]{rect,  }\item[{float}]{stroke\+Width = {\ttfamily 1.0f},  }\item[{\mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}}]{stroke\+Style = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Draws an ellipse with the specified brush, dimensions, stroke width, and stroke style.
+
+
+\begin{DoxyParams}{Parameters}
+{\em brush} & The brush used to fill the ellipse. \\
+\hline
+{\em rect} & The bounding rectangle of the ellipse. \\
+\hline
+{\em stroke\+Width} & The width of the ellipse\textquotesingle{}s stroke. \\
+\hline
+{\em stroke\+Style} & The style of the stroke. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_grafika_1_1_app_a7bf228ee2d87332dfca74019098e2cd8}\label{class_grafika_1_1_app_a7bf228ee2d87332dfca74019098e2cd8} 
+\index{Grafika::App@{Grafika::App}!DrawRectangle@{DrawRectangle}}
+\index{DrawRectangle@{DrawRectangle}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{DrawRectangle()}{DrawRectangle()}}
+{\footnotesize\ttfamily void Grafika\+::\+App\+::\+Draw\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}}]{brush,  }\item[{const \mbox{\hyperlink{struct_grafika_1_1_rect}{RectF}} \&}]{rect,  }\item[{float}]{stroke\+Width = {\ttfamily 1.0f},  }\item[{\mbox{\hyperlink{struct_grafika_1_1_stroke_style}{Stroke\+Style}} \texorpdfstring{$\ast$}{*}}]{stroke\+Style = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Draws a rectangle with the specified brush, dimensions, stroke width, and stroke style.
+
+
+\begin{DoxyParams}{Parameters}
+{\em brush} & The brush used to draw the rectangle. \\
+\hline
+{\em rect} & The dimensions of the rectangle. \\
+\hline
+{\em stroke\+Width} & The width of the rectangle\textquotesingle{}s stroke. \\
+\hline
+{\em stroke\+Style} & The style of the stroke.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_a5c56f845e855ee98b8e061d826ff9c6f}\label{class_grafika_1_1_app_a5c56f845e855ee98b8e061d826ff9c6f} 
+\index{Grafika::App@{Grafika::App}!EndDraw@{EndDraw}}
+\index{EndDraw@{EndDraw}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{EndDraw()}{EndDraw()}}
+{\footnotesize\ttfamily void App\+::\+End\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Ends drawing on the render target. \Hypertarget{class_grafika_1_1_app_a6457ec0de4421f77acf58603cf63ed89}\label{class_grafika_1_1_app_a6457ec0de4421f77acf58603cf63ed89} 
+\index{Grafika::App@{Grafika::App}!FillRoundedRectangle@{FillRoundedRectangle}}
+\index{FillRoundedRectangle@{FillRoundedRectangle}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{FillRoundedRectangle()}{FillRoundedRectangle()}}
+{\footnotesize\ttfamily void Grafika\+::\+App\+::\+Fill\+Rounded\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*}}]{brush,  }\item[{const \mbox{\hyperlink{struct_grafika_1_1_rounded_rect}{Grafika\+::\+Rounded\+Rect}} \&}]{rounded\+Rect }\end{DoxyParamCaption})}
+
+Fills a rounded rectangle with the specified brush.
+
+
+\begin{DoxyParams}{Parameters}
+{\em brush} & The brush used to fill the rounded rectangle. \\
+\hline
+{\em rounded\+Rect} & The rounded rectangle to be filled.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_ad49fa4b081bc259a66e321ba2b071aab}\label{class_grafika_1_1_app_ad49fa4b081bc259a66e321ba2b071aab} 
+\index{Grafika::App@{Grafika::App}!GetColorBrush@{GetColorBrush}}
+\index{GetColorBrush@{GetColorBrush}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{GetColorBrush()}{GetColorBrush()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_grafika_1_1_brush}{Brush}} \texorpdfstring{$\ast$}{*} Grafika\+::\+App\+::\+Get\+Color\+Brush (\begin{DoxyParamCaption}\item[{Color\+::\+Enum}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the brush associated with the given color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & the color for which to retrieve the brush\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the brush associated with the given color
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_a8fc7182399ed1ad5475ab26f9e1efdfb}\label{class_grafika_1_1_app_a8fc7182399ed1ad5475ab26f9e1efdfb} 
+\index{Grafika::App@{Grafika::App}!GetMousePos@{GetMousePos}}
+\index{GetMousePos@{GetMousePos}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{GetMousePos()}{GetMousePos()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_grafika_1_1_point_f}{PointF}} Grafika\+::\+App\+::\+Get\+Mouse\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the current mouse position on the window.
+
+\begin{DoxyReturn}{Returns}
+The mouse position as a \doxylink{struct_grafika_1_1_point_f}{PointF} object. 
+\end{DoxyReturn}
+\Hypertarget{class_grafika_1_1_app_aaa65463bc823d55eb63ad7698d622d95}\label{class_grafika_1_1_app_aaa65463bc823d55eb63ad7698d622d95} 
+\index{Grafika::App@{Grafika::App}!Hide@{Hide}}
+\index{Hide@{Hide}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{Hide()}{Hide()}}
+{\footnotesize\ttfamily void App\+::\+Hide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Hides the window.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_grafika_1_1_app_a6a9d7958f483f437a6d9ecb5f1669df9}{Create} 
+\end{DoxySeeAlso}
+\Hypertarget{class_grafika_1_1_app_adf2dce419eaedc87f24210f91acfc497}\label{class_grafika_1_1_app_adf2dce419eaedc87f24210f91acfc497} 
+\index{Grafika::App@{Grafika::App}!Loop@{Loop}}
+\index{Loop@{Loop}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{Loop()}{Loop()}}
+{\footnotesize\ttfamily void Grafika\+::\+App\+::\+Loop (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})()}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Executes a loop function until a WM\+\_\+\+QUIT message is received.
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & A pointer to the function to be executed in each iteration.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_ab61904818675d7d25ec5798799028269}\label{class_grafika_1_1_app_ab61904818675d7d25ec5798799028269} 
+\index{Grafika::App@{Grafika::App}!pool@{pool}}
+\index{pool@{pool}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{pool()}{pool()}}
+{\footnotesize\ttfamily bool Grafika\+::\+App\+::pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Processes the Windows message queue and updates the internal frame time.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily false} if a WM\+\_\+\+QUIT message is received, {\ttfamily true} otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em None} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_grafika_1_1_app_a89a1be269ea011890aaceae1f54c3a74}\label{class_grafika_1_1_app_a89a1be269ea011890aaceae1f54c3a74} 
+\index{Grafika::App@{Grafika::App}!Show@{Show}}
+\index{Show@{Show}!Grafika::App@{Grafika::App}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily void App\+::\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Makes the window visible.
+
+This method is useful when the window was created hidden using the {\ttfamily resizable} or {\ttfamily maximize} parameter in the {\ttfamily Create} method.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_grafika_1_1_app_a6a9d7958f483f437a6d9ecb5f1669df9}{Create} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Grafika2\+D/src/grafika2d.\+h\item 
+Grafika2\+D/src/grafika2d.\+cpp\end{DoxyCompactItemize}

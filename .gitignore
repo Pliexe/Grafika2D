@@ -1,0 +1,62 @@
+# Custom rules
+
+# Ignore all files in the .idea folder
+.idea/
+
+# Ignore all files in the .vs folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.csproj
+
+# Ignore all files in the .vscode folder
+.vscode/
+
+# Ignore all files in the .vscode-test folder
+.vscode-test/
+
+# Ignore bin and obj folders
+**/bin/
+**/bin-int/
+
+# Compiled Shaders
+*.cso
+
+# Don't ignore premake5.exe and premake5
+!**/premake/bin/premake5.exe
+!**/premake/bin/premake5
+!**/premake/bin
+
+# Ignore Visual Studio Project files
+*.csproj
+*.csproj.user
+*.csproj.vspscc
+*.sln
+*.sln.docstates
+*.suo
+*.vssscc
+*.vspscc
+
+# Ignore Visual Studio Code files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# gmake
+*.make
+Makefile
+HeliosEditor/Test.scene
+
+# codelite
+.codelite
+*.project
+*.workspace
+
+#etc
+.cache
+compile_commands.json
