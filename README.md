@@ -1,5 +1,6 @@
 # Small project for quick 2d graphics
 
+Download Example At: https://github.com/Pliexe/Grafika2D/releases/tag/v0.0.1-alpha
 
 Documentation: https://pliexe.github.io/Grafika2D/html/
 
